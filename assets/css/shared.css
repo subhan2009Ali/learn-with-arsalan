@@ -69,7 +69,59 @@ p{ line-height:1.6; }
   display:flex; align-items:center; gap:10px;
 }
 .eyebrow::before{content:""; width:22px; height:1px; background:var(--accent-2);}
+.hero-visual {
+  position: relative;
+  width: 320px; /* Adjust based on your layout needs */
+  height: 420px; /* Vertical ratio */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
 
+.teacher-photo-frame {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px; /* Professional, soft rounded corners */
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border for dark mode */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25), 
+              0 0 0 1px rgba(255, 255, 255, 0.05) inset; /* Interior highlight */
+  background: #1a1c24; /* Fallback for transparency */
+}
+
+.teacher-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fills the vertical frame */
+  object-position: top; /* Keeps the teacher's face centered/visible */
+}
+
+.hero-badge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px); /* Blurred background effect */
+  padding: 12px 16px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.hero-badge b {
+  display: block;
+  font-size: 15px;
+}
+
+.hero-badge span {
+  font-size: 12px;
+  opacity: 0.7;
+}
 section{ position:relative; padding:110px 0; z-index:1; }
 @media(max-width:760px){ section{padding:74px 0;} }
 .sec-head{ max-width:640px; margin:0 auto 56px; text-align:center; }
