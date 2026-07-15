@@ -387,7 +387,14 @@
       layoutHelix(1);
     }
   }
-
+(function premiumImageFrames(){
+    const candidates = new Set();
+ 
+    // Known showcase frames on this template.
+    document.querySelectorAll('.teacher-photo-frame, .teacher-frame').forEach(frame=>{
+      const img = frame.querySelector('img');
+      if(img) candidates.add(img);
+    });
   /* ---------- INTERACTIVE "ENGLISH ELEMENTS" BACKGROUND ---------- */
   /* Floating letters, punctuation, and short word-fragments that drift
      slowly and gently drift away from the cursor for a subtle, living
