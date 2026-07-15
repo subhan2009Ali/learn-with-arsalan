@@ -446,4 +446,175 @@
     requestAnimationFrame(tick);
   })();
 
+  /* =====================================================================
+     PREMIUM 3D TILT — .tilt-card
+     Real pointer-driven perspective tilt for every element that already
+     carries the .tilt-card class (feature cards, course cards,
+     testimonials, blog cards, the teacher photo frames, etc). Also writes
+     --mx / --my custom properties onto the card as it moves, so any
+     mouse-follow glow layer already living inside it (e.g. .card-glow,
+     .frame-shine) can track the cursor for free. Skipped on touch
+     devices and when the user prefers reduced motion.
+     ===================================================================== */
+  if(!reduceMotion && !isCoarse){
+    document.querySelectorAll('.tilt-card').forEach(card=>{
+      let raf = null, hovering = false;
+      card.style.transformStyle = 'preserve-3d';
+      card.style.willChange = 'transform';
+
+      function update(e){
+        const r = card.getBoundingClientRect();
+        const px = (e.clientX - r.left) / (r.width || 1);
+        const py = (e.clientY - r.top) / (r.height || 1);
+        const rx = (0.5 - py) * 8;
+        const ry = (px - 0.5) * 10;
+        card.style.transform = `perspective(1200px) rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg) translateY(-4px)`;
+        card.style.setProperty('--mx', (px * 100).toFixed(1) + '%');
+        card.style.setProperty('--my', (py * 100).toFixed(1) + '%');
+        raf = null;
+      }
+      card.addEventListener('mouseenter', ()=>{
+        hovering = true;
+        card.style.transition = 'transform .18s ease-out';
+      });
+      card.addEventListener('mousemove', e=>{
+        if(!hovering || raf) return;
+        raf = requestAnimationFrame(()=> update(e));
+      });
+      card.addEventListener('mouseleave', ()=>{
+        hovering = false;
+        card.style.transition = 'transform .6s cubic-bezier(.2,.8,.2,1)';
+        card.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg) translateY(0)';
+      });
+    });
+  }
+
+  /* =====================================================================
+     NAV AUTO-HIDE ON SCROLL DIRECTION
+     Layers a lightweight hide-on-scroll-down / reveal-on-scroll-up
+     behaviour on top of the existing .scrolled state, driven purely by
+     inline transform so it needs no extra CSS and never fights the
+     background/blur rules already applied to the nav.
+     ===================================================================== */
+  if(navEl && !reduceMotion){
+    let lastY = window.scrollY, navTicking = false;
+    navEl.style.transition = 'transform .35s cubic-bezier(.2,.8,.2,1)';
+    window.addEventListener('scroll', ()=>{
+      if(navTicking) return;
+      navTicking = true;
+      requestAnimationFrame(()=>{
+        const y = window.scrollY;
+        const goingDown = y > lastY;
+        navEl.style.transform = (goingDown && y > 140) ? 'translateY(-112%)' : 'translateY(0)';
+        lastY = y;
+        navTicking = false;
+      });
+    }, {passive:true});
+  }
+
+  /* =====================================================================
+     PREMIUM IMAGE FRAMES
+     Markup and stylesheets stay untouched — this fits every qualifying
+     photo into a consistent vertical showcase frame at runtime: a calm
+     portrait ratio, curved corners, a layered "professional" border and
+     ambient glow, a gentle load-in reveal, and a smooth hover zoom.
+     Logos, avatars, and icons are explicitly excluded. Runs on every
+     page that loads this file, not just the homepage.
+     ===================================================================== */
+  (function premiumImageFrames(){
+    const candidates = new Set();
+
+    // Known showcase frames on this template.
+    document.querySelectorAll('.teacher-photo-frame, .teacher-frame').forEach(frame=>{
+      const img = frame.querySelector('img');
+      if(img) candidates.add(img);
+    });
+
+    // Generic fallback so this keeps working on any other page that
+    // shares this file: any reasonably large content image that isn't
+    // an avatar / logo / icon.
+    document.querySelectorAll('img').forEach(img=>{
+      if(candidates.has(img)) return;
+      if(img.closest('.brand-logo, .testi-avatar, .icon-btn, nav, footer, .hero-badge')) return;
+      const w = img.getBoundingClientRect().width || img.width || 0;
+      if(w >= 160) candidates.add(img);
+    });
+
+    candidates.forEach(img=>{
+      const frame = img.parentElement;
+      if(!frame || frame.dataset.premiumFramed === 'true') return;
+      frame.dataset.premiumFramed = 'true';
+
+      // Lock in the frame's current footprint before forcing a portrait
+      // ratio, so it can't collapse if the page's own CSS gave it a
+      // fixed height instead of "auto".
+      const currentWidth = frame.getBoundingClientRect().width || 320;
+
+      Object.assign(frame.style, {
+        position: 'relative',
+        boxSizing: 'border-box',
+        width: currentWidth + 'px',
+        maxWidth: '100%',
+        height: 'auto',
+        aspectRatio: '3 / 4',
+        overflow: 'hidden',
+        borderRadius: '28px',
+        border: '1px solid rgba(255,255,255,.14)',
+        boxShadow: '0 34px 80px -28px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.05) inset, 0 0 46px -14px rgba(120,140,255,.28)',
+        background: 'linear-gradient(160deg, rgba(255,255,255,.07), rgba(255,255,255,0) 55%)'
+      });
+
+      Object.assign(img.style, {
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+        objectPosition: 'center 18%',
+        display: 'block',
+        opacity: '0',
+        transform: 'scale(1.08) translateY(10px)',
+        filter: 'blur(8px)',
+        transition: 'opacity .9s ease, transform 1.1s cubic-bezier(.2,.8,.2,1), filter .9s ease'
+      });
+
+      function reveal(){
+        img.style.opacity = '1';
+        img.style.filter = 'blur(0)';
+        img.style.transform = 'scale(1) translateY(0)';
+      }
+      if(img.complete && img.naturalWidth){ requestAnimationFrame(reveal); }
+      else{ img.addEventListener('load', reveal, {once:true}); }
+
+      if(!isCoarse){
+        frame.addEventListener('mouseenter', ()=>{
+          img.style.transitionDuration = '.7s';
+          img.style.transform = 'scale(1.07) translateY(0)';
+          img.style.filter = 'brightness(1.04) blur(0)';
+        });
+        frame.addEventListener('mouseleave', ()=>{
+          img.style.transitionDuration = '.7s';
+          img.style.transform = 'scale(1) translateY(0)';
+          img.style.filter = 'blur(0)';
+        });
+      }
+    });
+
+    // Re-lock frame widths on resize so the portrait ratio stays
+    // proportionate to the frame's own responsive column, not a stale
+    // pixel value captured at page load.
+    let resizeRaf = null;
+    window.addEventListener('resize', ()=>{
+      if(resizeRaf) return;
+      resizeRaf = requestAnimationFrame(()=>{
+        candidates.forEach(img=>{
+          const frame = img.parentElement;
+          if(!frame) return;
+          frame.style.width = 'auto';
+          const w = frame.getBoundingClientRect().width;
+          frame.style.width = (w || 320) + 'px';
+        });
+        resizeRaf = null;
+      });
+    }, {passive:true});
+  })();
+
 })();
