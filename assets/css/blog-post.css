@@ -1,0 +1,14 @@
+﻿/* Page-specific styles for blog-post.html */
+.post-hero::after {
+  content: '';
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), #FF6B6B);
+  width: var(--reading-progress, 0%);
+  transition: width .15s linear;
+  z-index: 9999;
+}
+

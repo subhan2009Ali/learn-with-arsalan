@@ -1,0 +1,11 @@
+﻿/* Page-specific styles for index.html */
+
+
+/* ============ TEACHER ============ */
+.teacher{ display:grid; grid-template-columns:.8fr 1.2fr; gap:60px; align-items:center; }
+
+@media(max-width:860px){ .teacher{grid-template-columns:1fr;} }
+
+.teacher h2{ font-size:clamp(26px,4vw,38px); }
+
+.teacher p{ margin-top:16px; color:var(--ink-dim); line-height:1.7; font-size:15.5px; max-width:520px;}

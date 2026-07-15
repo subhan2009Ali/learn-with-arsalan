@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poetry Hub â€” Let's Learn with Arslan</title>
+  <meta name="description" content="Explore the Poetry Hub with poem summaries, annotations, literary devices, MCQs and exam-ready practice.">
+  <link rel="icon" href="assets/images/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,440;0,9..144,560;0,9..144,650;1,9..144,440;1,9..144,560&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/shared.css">
+    <link rel='stylesheet' href='assets/css/poetry.css'>
+</head>
+<body>
+
+<div class="bg-glow"></div>
+<div class="bg-blobs">
+  <div class="blob position-a"></div>
+  <div class="blob b2 position-b"></div>
+  <div class="blob b3 position-c"></div>
+</div>
+<div class="lit-layer"></div>
+<div class="cursor-dot" id="cdot"></div>
+<div class="cursor-ring" id="cring"></div>
+
+<nav class="site-nav" aria-label="Primary navigation">
+  <a href="index.html" class="brand">
+    <div class="brand-logo"><img src="assets/images/logo.jpg" alt="Let's Learn with Arslan logo"></div>
+    <div class="brand-text">Let's Learn with Arslan<span>Where English Becomes Easy</span></div>
+  </a>
+  <ul class="nav-links">
+    <li class="has-mega">
+      <a href="grammar.html" class="top-link">Learn <svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg></a>
+      <div class="mega">
+        <div class="mega-col">
+          <h5>Core Subjects</h5>
+          <a href="grammar.html">Grammar<small>Tenses, rules &amp; MCQs</small></a>
+          <a href="poetry.html">Poetry<small>Line-by-line explanations</small></a>
+          <a href="literature.html">Literature<small>Stories &amp; criticism</small></a>
+        </div>
+        <div class="mega-col">
+          <h5>Practice</h5>
+          <a href="vocabulary.html">Vocabulary<small>Idioms &amp; word pairs</small></a>
+          <a href="quiz.html">Quiz<small>Instant MCQs</small></a>
+          <a href="past-papers.html">Past Papers<small>Board exam practice</small></a>
+        </div>
+        <div class="mega-col">
+          <h5>Explore</h5>
+          <a href="lesson.html">Lessons<small>Video and notes</small></a>
+          <a href="blog.html">Blog<small>Study tips &amp; strategy</small></a>
+          <a href="contact.html">Contact<small>Get support</small></a>
+        </div>
+      </div>
+    </li>
+    <li><a href="teacher-dashboard.html" class="top-link">Teacher</a></li>
+    <li><a href="blog.html" class="top-link">Blog</a></li>
+    <li><a href="contact.html" class="top-link">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="icon-btn magnetic" data-search-open aria-label="Open search">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <button class="icon-btn magnetic theme-toggle" data-theme-toggle aria-label="Toggle dark / light mode">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 019.5 4 8.5 8.5 0 1020 14.5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+    <a href="login.html" class="btn btn-ghost btn-sm magnetic nav-cta">Login</a>
+    <a href="register.html" class="btn btn-primary btn-sm magnetic nav-cta">Start Free</a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-panel" aria-hidden="true">
+  <a href="grammar.html">Grammar</a>
+  <a href="poetry.html">Poetry</a>
+  <a href="literature.html">Literature</a>
+  <a href="vocabulary.html">Vocabulary</a>
+  <a href="quiz.html">Quiz</a>
+  <a href="past-papers.html">Past Papers</a>
+  <a href="lesson.html">Lessons</a>
+  <a href="blog.html">Blog</a>
+  <a href="contact.html">Contact</a>
+  <div class="mobile-cta">
+    <a href="login.html" class="btn btn-ghost">Login</a>
+    <a href="register.html" class="btn btn-primary">Start Free</a>
+  </div>
+</div>
+</div>
+
+<div class="search-overlay" aria-hidden="true">
+  <button class="icon-btn search-close magnetic" data-search-close aria-label="Close search">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+  </button>
+  <div class="search-box">
+    <div class="search-actions">
+      <input type="text" placeholder="Search grammar, poems, past papers…" autocomplete="off" aria-label="Search site content">
+      <button type="button" class="icon-btn voice-btn" id="voiceSearchBtn" aria-label="Voice search">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v8M8 8a4 4 0 008 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M5 12v2a7 7 0 0014 0v-2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="search-results" id="searchResults" aria-live="polite"></div>
+    <div class="search-hint">
+      <span>Present Perfect</span><span>The Old Man and the Sea</span><span>2023 Past Paper</span><span>Idioms A–Z</span>
+    </div>
+  </div>
+</div>
+    <div class="search-results" id="searchResults" aria-live="polite"></div>
+    <div class="search-hint">
+      <span>Nature</span><span>Choice</span><span>Memory</span><span>Romantic Poetry</span>
+    </div>
+  </div>
+</div>
+
+<main id="poetryRoot"></main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="brand">
+        <div class="brand-logo"><img src="assets/images/logo.jpg" alt="Let's Learn with Arslan logo"></div>
+        <div class="brand-text">Let's Learn with Arslan</div>
+      </a>
+      <p>A premium learning platform for intermediate English students — grammar, poetry, literature, vocabulary and exam practice in one calm place.</p>
+      <div class="foot-social">
+        <a href="#" aria-label="Facebook" class="icon-btn magnetic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h2.5l.5-3H14v-1.5c0-.3.2-.5.5-.5z" stroke="currentColor" stroke-width="1.3"/></svg></a>
+        <a href="#" aria-label="Instagram" class="icon-btn magnetic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.4"/><circle cx="16.4" cy="7.6" r=".9" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="YouTube" class="icon-btn magnetic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="3" stroke="currentColor" stroke-width="1.4"/><path d="M10 9.5l5 2.5-5 2.5z" fill="currentColor"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4>Learn</h4>
+      <a href="grammar.html">Grammar</a>
+      <a href="poetry.html">Poetry</a>
+      <a href="literature.html">Literature</a>
+      <a href="vocabulary.html">Vocabulary</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="past-papers.html">Past Papers</a>
+    </div>
+    <div>
+      <h4>Platform</h4>
+      <a href="lesson.html">Lessons</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="student-dashboard.html">Dashboard</a>
+      <a href="teacher-dashboard.html">Teacher Panel</a>
+      <a href="admin-dashboard.html">Admin</a>
+    </div>
+    <div>
+      <h4>Support</h4>
+      <a href="#">FAQ</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+      <a href="#">Help Center</a>
+    </div>
+  </div>
+  <div class="footer-bottom wrap">
+    <span>© 2026 Let's Learn with Arslan. All rights reserved.</span>
+    <span>Where English Becomes Easy.</span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/js/lessons-data.js"></script>
+<script src="assets/js/pages-data.js"></script>
+<script src="assets/js/poetry-data.js"></script>
+<script src="assets/js/shared.js"></script>
+<script src="assets/js/poetry.js"></script>
+</body>
+</html>
+
+

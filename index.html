@@ -1,0 +1,427 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Let's Learn with Arslan â€” Where English Becomes Easy</title>
+<meta name="description" content="Premium Intermediate English learning platform â€” grammar, poetry, literature, vocabulary and past papers, taught by Arslan.">
+<link rel="icon" href="assets/images/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,440;0,9..144,560;0,9..144,650;1,9..144,440;1,9..144,560&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/shared.css">
+    <link rel='stylesheet' href='assets/css/index.css'>
+</head>
+<body>
+
+<div class="bg-glow"></div>
+<div class="bg-blobs">
+  <div class="blob position-a"></div>
+  <div class="blob b2 position-b"></div>
+  <div class="blob b3 position-c"></div>
+</div>
+<div class="lit-layer"></div>
+<div class="cursor-dot" id="cdot"></div>
+<div class="cursor-ring" id="cring"></div>
+
+<!-- NAV -->
+<nav class="site-nav" aria-label="Primary navigation">
+  <a href="index.html" class="brand">
+    <div class="brand-logo"><img src="assets/images/logo.jpg" alt="Let's Learn with Arslan logo"></div>
+    <div class="brand-text">Let's Learn with Arslan<span>Where English Becomes Easy</span></div>
+  </a>
+  <ul class="nav-links">
+    <li class="has-mega">
+      <a href="grammar.html" class="top-link">Learn <svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg></a>
+      <div class="mega">
+        <div class="mega-col">
+          <h5>Core Subjects</h5>
+          <a href="grammar.html">Grammar<small>Tenses, rules &amp; MCQs</small></a>
+          <a href="poetry.html">Poetry<small>Line-by-line explanations</small></a>
+          <a href="literature.html">Literature<small>Stories &amp; criticism</small></a>
+        </div>
+        <div class="mega-col">
+          <h5>Practice</h5>
+          <a href="vocabulary.html">Vocabulary<small>Idioms &amp; word pairs</small></a>
+          <a href="quiz.html">Quiz<small>Instant MCQs</small></a>
+          <a href="past-papers.html">Past Papers<small>Board exam practice</small></a>
+        </div>
+        <div class="mega-col">
+          <h5>Explore</h5>
+          <a href="lesson.html">Lessons<small>Video and notes</small></a>
+          <a href="blog.html">Blog<small>Study tips &amp; strategy</small></a>
+          <a href="contact.html">Contact<small>Get support</small></a>
+        </div>
+      </div>
+    </li>
+    <li><a href="teacher-dashboard.html" class="top-link">Teacher</a></li>
+    <li><a href="blog.html" class="top-link">Blog</a></li>
+    <li><a href="contact.html" class="top-link">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="icon-btn magnetic" data-search-open aria-label="Open search">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <button class="icon-btn magnetic theme-toggle" data-theme-toggle aria-label="Toggle dark / light mode">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 019.5 4 8.5 8.5 0 1020 14.5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+    <a href="login.html" class="btn btn-ghost btn-sm magnetic nav-cta">Login</a>
+    <a href="register.html" class="btn btn-primary btn-sm magnetic nav-cta">Start Free</a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- MOBILE PANEL -->
+<div class="mobile-panel" aria-hidden="true">
+  <a href="grammar.html">Grammar</a>
+  <a href="poetry.html">Poetry</a>
+  <a href="literature.html">Literature</a>
+  <a href="vocabulary.html">Vocabulary</a>
+  <a href="quiz.html">Quiz</a>
+  <a href="past-papers.html">Past Papers</a>
+  <a href="lesson.html">Lessons</a>
+  <a href="blog.html">Blog</a>
+  <a href="contact.html">Contact</a>
+  <div class="mobile-cta">
+    <a href="login.html" class="btn btn-ghost">Login</a>
+    <a href="register.html" class="btn btn-primary">Start Free</a>
+  </div>
+</div>
+</div>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" aria-hidden="true">
+  <button class="icon-btn search-close magnetic" data-search-close aria-label="Close search">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+  </button>
+  <div class="search-box">
+    <div class="search-actions">
+      <input type="text" placeholder="Search grammar, poems, past papers…" autocomplete="off" aria-label="Search site content">
+      <button type="button" class="icon-btn voice-btn" id="voiceSearchBtn" aria-label="Voice search">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v8M8 8a4 4 0 008 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M5 12v2a7 7 0 0014 0v-2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="search-results" id="searchResults" aria-live="polite"></div>
+    <div class="search-hint">
+      <span>Present Perfect</span><span>The Old Man and the Sea</span><span>2023 Past Paper</span><span>Idioms A–Z</span>
+    </div>
+  </div>
+</div>
+    <div class="search-results" id="searchResults" aria-live="polite"></div>
+    <div class="search-hint">
+      <span>Present Perfect</span><span>The Old Man and the Sea</span><span>2023 Past Paper</span><span>Idioms A?Z</span>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow reveal in">Intermediate English, Simplified</div>
+      <h1 id="heroHead">Where English becomes easy.</h1>
+      <p class="hero-sub" id="typeTarget" data-text="Grammar, Literature, Poetry and Past Papers â€” taught the way a great teacher would, online."></p>
+      <div class="hero-cta">
+        <a href="page.html?slug=register" class="btn btn-primary magnetic">Create Free Account</a>
+        <a href="#courses" class="btn btn-ghost magnetic">Explore Subjects</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b data-count="12000" data-suffix="+">0</b><span>STUDENTS TAUGHT</span></div>
+        <div class="stat"><b data-count="340" data-suffix="+">0</b><span>PAST PAPERS SOLVED</span></div>
+        <div class="stat"><b data-count="98" data-suffix="%">0</b><span>SATISFACTION</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal in">
+      <div class="orb-glow"></div>
+      <div class="hero-ring"></div>
+      <div class="teacher-photo-frame">
+        <img src="assets/images/teacher.png" alt="Arslan teaching Past Perfect Tense on the whiteboard">
+      </div>
+      <div class="hero-badge">
+        <div class="brand-logo small"><img src="assets/images/logo.jpg" alt=""></div>
+        <div><b>Arslan</b><span>Founder &amp; Lead Teacher</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow center">Why Students Stay</div>
+      <h2>Everything a board exam needs</h2>
+      <p>One calm, well-organised place instead of ten scattered PDFs and YouTube tabs.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card reveal">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 19V5a2 2 0 012-2h11l3 3v13a2 2 0 01-2 2H6a2 2 0 01-2-2z" stroke="currentColor" stroke-width="1.6"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <h3>Board-Aligned Notes</h3>
+        <p>Every note maps directly to your board's syllabus â€” nothing extra to guess at.</p>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4l14 8-14 8V4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+        <h3>Video Lectures</h3>
+        <p>Short, chapter-wise videos that explain the way a classroom actually teaches.</p>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M9 11l2 2 4-4M21 12a9 9 0 11-9-9 9 9 0 019 9z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Instant-Feedback Quizzes</h3>
+        <p>MCQs after every topic, scored immediately, so gaps show up before the exam does.</p>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/></svg></div>
+        <h3>Live Doubt Sessions</h3>
+        <p>Weekly live classes to ask anything that still feels unclear after the notes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HELIX: 3D CIRCLING CATEGORY CARDS -->
+<div class="helix-wrap" id="helix">
+  <div class="helix-stage">
+    <div class="helix-head reveal in">
+      <div class="eyebrow center">Categories</div>
+      <h2>Every subject, one spiral.</h2>
+      <p>Scroll to unwind the syllabus â€” grammar to poetry, essays to past papers â€” arranged the way a good course should feel: connected. Tap any card to open it.</p>
+    </div>
+    <div class="helix-track" id="helixTrack"></div>
+    <div class="helix-progress" id="helixProgress"></div>
+  </div>
+</div>
+
+<!-- FEATURED COURSES -->
+<section id="courses">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow center">Featured</div>
+      <h2>Start where it matters most</h2>
+      <p>The subjects students revisit most before exams â€” notes, videos, and MCQs in one place.</p>
+    </div>
+    <div class="card-grid">
+      <a href="grammar.html" class="course-card reveal">
+        <span class="course-tag">Grammar</span>
+        <h3>Tenses, Simplified</h3>
+        <p>Every tense with real sentence patterns, timelines, and 40+ practice MCQs.</p>
+        <div class="course-meta"><span>12 lessons</span><span class="go">Open â†’</span></div>
+      </a>
+      <a href="poetry.html" class="course-card reveal">
+        <span class="course-tag">Poetry</span>
+        <h3>Line-by-Line Explanations</h3>
+        <p>Every poem broken into theme, difficult words, and exam-ready questions.</p>
+        <div class="course-meta"><span>9 poems</span><span class="go">Open â†’</span></div>
+      </a>
+      <a href="past-papers.html" class="course-card reveal">
+        <span class="course-tag">Past Papers</span>
+        <h3>18 Years, All Boards</h3>
+        <p>Filter by board and year, view online or download the full solution PDF.</p>
+        <div class="course-meta"><span>340+ papers</span><span class="go">Open â†’</span></div>
+      </a>
+      <a href="lesson.html" class="course-card reveal">
+        <span class="course-tag">Writing</span>
+        <h3>Essays &amp; Letters</h3>
+        <p>Formats, model answers, and phrase banks for every application type.</p>
+        <div class="course-meta"><span>26 formats</span><span class="go">Open â†’</span></div>
+      </a>
+      <a href="page.html?slug=literature" class="course-card reveal">
+        <span class="course-tag">Literature</span>
+        <h3>Stories &amp; Literary Devices</h3>
+        <p>Summaries, author biographies, and device-spotting made simple.</p>
+        <div class="course-meta"><span>15 stories</span><span class="go">Open â†’</span></div>
+      </a>
+      <a href="vocabulary.html" class="course-card reveal">
+        <span class="course-tag">Vocabulary</span>
+        <h3>Idioms &amp; Pair of Words</h3>
+        <p>The exact list examiners draw from â€” with usage examples that stick.</p>
+        <div class="course-meta"><span>500+ words</span><span class="go">Open â†’</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<section class="stats-band">
+  <div class="wrap stats-row">
+    <div><b data-count="12000" data-suffix="+">0</b><span>STUDENTS TAUGHT</span></div>
+    <div><b data-count="340" data-suffix="+">0</b><span>PAST PAPERS SOLVED</span></div>
+    <div><b data-count="1200" data-suffix="+">0</b><span>MCQs AVAILABLE</span></div>
+    <div><b data-count="98" data-suffix="%">0</b><span>STUDENT SATISFACTION</span></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials-sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow center">Testimonials</div>
+      <h2>What students say</h2>
+    </div>
+    <div class="testi-row">
+      <div class="testi-card reveal">
+        <p>"The poetry explanations finally made sense â€” line by line, not just summaries."</p>
+        <div class="testi-who"><div class="testi-avatar"></div><div><b>Hafsa I.</b><span>Intermediate Part II</span></div></div>
+      </div>
+      <div class="testi-card reveal">
+        <p>"I solved five years of past papers in a weekend using the filters."</p>
+        <div class="testi-who"><div class="testi-avatar"></div><div><b>Bilal R.</b><span>Board Candidate</span></div></div>
+      </div>
+      <div class="testi-card reveal">
+        <p>"Grammar finally clicked. The MCQs after each topic are exactly exam-level."</p>
+        <div class="testi-who"><div class="testi-avatar"></div><div><b>Areeba N.</b><span>Intermediate Part I</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEACHER -->
+<section id="teacher">
+  <div class="wrap teacher">
+    <div class="teacher-frame reveal">
+      <img src="assets/images/teacher.png" alt="Arslan explaining Past Perfect Tense to students">
+      <div class="frame-tint"></div>
+    </div>
+    <div class="reveal">
+      <div class="eyebrow">Your Teacher</div>
+      <h2>Taught by Arslan, made for board exams</h2>
+      <p>Ten years of classroom teaching, distilled into a platform that explains the way it's actually taught in class â€” not textbook copy-paste. Every note, video, and quiz is built around what boards actually ask.</p>
+      <div class="teacher-points">
+        <div>âœ¦ <span><b>Chapter-wise video lectures</b> that follow your board's syllabus exactly.</span></div>
+        <div>âœ¦ <span><b>Solved exercises</b> for every short and long question in the book.</span></div>
+        <div>âœ¦ <span><b>Weekly live doubt sessions</b> for anything still unclear.</span></div>
+      </div>
+      <div class="hero-cta">
+        <a href="page.html?slug=contact" class="btn btn-primary magnetic">Talk to Arslan</a>
+        <a href="lesson.html" class="btn btn-ghost magnetic">Watch a Free Lesson</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG PREVIEW -->
+<section id="blog-preview">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow center">From the Blog</div>
+      <h2>Study tips &amp; exam strategy</h2>
+      <p>Short reads to help you prepare smarter, not just longer.</p>
+    </div>
+    <div class="blog-grid">
+      <a href="page.html?slug=blog-post" class="blog-card reveal">
+        <div class="blog-thumb"><span class="qmark">â€œ</span></div>
+        <div class="blog-body">
+          <span class="blog-cat">Exam Strategy</span>
+          <h3>Five Mistakes Students Make in the Grammar Section</h3>
+          <div class="blog-meta">6 min read Â· Updated 2026</div>
+        </div>
+      </a>
+      <a href="page.html?slug=blog-post" class="blog-card reveal">
+        <div class="blog-thumb"><span class="qmark">?</span></div>
+        <div class="blog-body">
+          <span class="blog-cat">Poetry</span>
+          <h3>How to Answer "Reference to the Context" Questions</h3>
+          <div class="blog-meta">8 min read Â· Updated 2026</div>
+        </div>
+      </a>
+      <a href="page.html?slug=blog-post" class="blog-card reveal">
+        <div class="blog-thumb"><span class="qmark">&amp;</span></div>
+        <div class="blog-body">
+          <span class="blog-cat">Past Papers</span>
+          <h3>A 4-Week Past-Paper Revision Plan That Actually Works</h3>
+          <div class="blog-meta">5 min read Â· Updated 2026</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section>
+  <div class="wrap">
+    <div class="newsletter-band reveal">
+      <div class="eyebrow center">Stay Sharp</div>
+      <h2>One useful email a week. No spam.</h2>
+      <p>New notes, past-paper solutions, and quiz drops â€” straight to your inbox.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="you@example.com" required>
+        <button type="submit" class="btn btn-primary magnetic">Subscribe</button>
+      </form>
+      <div class="newsletter-note">Free forever. Unsubscribe anytime.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section>
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div class="eyebrow center">Get Started</div>
+      <h2>Your Intermediate English,<br>finally under control.</h2>
+      <p>Free to start. No credit card. Cancel anytime.</p>
+      <div class="hero-cta">
+        <a href="page.html?slug=register" class="btn btn-primary magnetic">Create Free Account</a>
+        <a href="page.html?slug=contact" class="btn btn-ghost magnetic">Talk to a Teacher</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="brand">
+        <div class="brand-logo"><img src="assets/images/logo.jpg" alt="Let's Learn with Arslan logo"></div>
+        <div class="brand-text">Let's Learn with Arslan</div>
+      </a>
+      <p>A premium learning platform for intermediate English students — grammar, poetry, literature, vocabulary and exam practice in one calm place.</p>
+      <div class="foot-social">
+        <a href="#" aria-label="Facebook" class="icon-btn magnetic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h2.5l.5-3H14v-1.5c0-.3.2-.5.5-.5z" stroke="currentColor" stroke-width="1.3"/></svg></a>
+        <a href="#" aria-label="Instagram" class="icon-btn magnetic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.4"/><circle cx="16.4" cy="7.6" r=".9" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="YouTube" class="icon-btn magnetic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="3" stroke="currentColor" stroke-width="1.4"/><path d="M10 9.5l5 2.5-5 2.5z" fill="currentColor"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4>Learn</h4>
+      <a href="grammar.html">Grammar</a>
+      <a href="poetry.html">Poetry</a>
+      <a href="literature.html">Literature</a>
+      <a href="vocabulary.html">Vocabulary</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="past-papers.html">Past Papers</a>
+    </div>
+    <div>
+      <h4>Platform</h4>
+      <a href="lesson.html">Lessons</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="student-dashboard.html">Dashboard</a>
+      <a href="teacher-dashboard.html">Teacher Panel</a>
+      <a href="admin-dashboard.html">Admin</a>
+    </div>
+    <div>
+      <h4>Support</h4>
+      <a href="#">FAQ</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+      <a href="#">Help Center</a>
+    </div>
+  </div>
+  <div class="footer-bottom wrap">
+    <span>© 2026 Let's Learn with Arslan. All rights reserved.</span>
+    <span>Where English Becomes Easy.</span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/js/lessons-data.js"></script>
+<script src="assets/js/pages-data.js"></script>
+<script src="assets/js/poetry-data.js"></script>
+<script src="assets/js/shared.js"></script>
+</body>
+</html>
+
+
+

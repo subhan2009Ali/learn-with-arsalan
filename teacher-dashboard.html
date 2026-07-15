@@ -1,0 +1,293 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teacher Dashboard â€” Let's Learn with Arslan</title>
+  <link rel="stylesheet" href="assets/css/shared.css">
+    <link rel='stylesheet' href='assets/css/teacher-dashboard.css'>
+</head>
+<body>
+  <div class="wrap-max">
+    <nav class="site-nav" aria-label="Primary navigation">
+  <a href="index.html" class="brand">
+    <div class="brand-logo"><img src="assets/images/logo.jpg" alt="Let's Learn with Arslan logo"></div>
+    <div class="brand-text">Let's Learn with Arslan<span>Where English Becomes Easy</span></div>
+  </a>
+  <ul class="nav-links">
+    <li class="has-mega">
+      <a href="grammar.html" class="top-link">Learn <svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg></a>
+      <div class="mega">
+        <div class="mega-col">
+          <h5>Core Subjects</h5>
+          <a href="grammar.html">Grammar<small>Tenses, rules &amp; MCQs</small></a>
+          <a href="poetry.html">Poetry<small>Line-by-line explanations</small></a>
+          <a href="literature.html">Literature<small>Stories &amp; criticism</small></a>
+        </div>
+        <div class="mega-col">
+          <h5>Practice</h5>
+          <a href="vocabulary.html">Vocabulary<small>Idioms &amp; word pairs</small></a>
+          <a href="quiz.html">Quiz<small>Instant MCQs</small></a>
+          <a href="past-papers.html">Past Papers<small>Board exam practice</small></a>
+        </div>
+        <div class="mega-col">
+          <h5>Explore</h5>
+          <a href="lesson.html">Lessons<small>Video and notes</small></a>
+          <a href="blog.html">Blog<small>Study tips &amp; strategy</small></a>
+          <a href="contact.html">Contact<small>Get support</small></a>
+        </div>
+      </div>
+    </li>
+    <li><a href="teacher-dashboard.html" class="top-link">Teacher</a></li>
+    <li><a href="blog.html" class="top-link">Blog</a></li>
+    <li><a href="contact.html" class="top-link">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="icon-btn magnetic" data-search-open aria-label="Open search">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <button class="icon-btn magnetic theme-toggle" data-theme-toggle aria-label="Toggle dark / light mode">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 019.5 4 8.5 8.5 0 1020 14.5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+    <a href="login.html" class="btn btn-ghost btn-sm magnetic nav-cta">Login</a>
+    <a href="register.html" class="btn btn-primary btn-sm magnetic nav-cta">Start Free</a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-panel" aria-hidden="true">
+  <a href="grammar.html">Grammar</a>
+  <a href="poetry.html">Poetry</a>
+  <a href="literature.html">Literature</a>
+  <a href="vocabulary.html">Vocabulary</a>
+  <a href="quiz.html">Quiz</a>
+  <a href="past-papers.html">Past Papers</a>
+  <a href="lesson.html">Lessons</a>
+  <a href="blog.html">Blog</a>
+  <a href="contact.html">Contact</a>
+  <div class="mobile-cta">
+    <a href="login.html" class="btn btn-ghost">Login</a>
+    <a href="register.html" class="btn btn-primary">Start Free</a>
+  </div>
+</div>
+<div class="search-overlay" aria-hidden="true">
+  <button class="icon-btn search-close magnetic" data-search-close aria-label="Close search">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+  </button>
+  <div class="search-box">
+    <div class="search-actions">
+      <input type="text" placeholder="Search grammar, poems, past papers…" autocomplete="off" aria-label="Search site content">
+      <button type="button" class="icon-btn voice-btn" id="voiceSearchBtn" aria-label="Voice search">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v8M8 8a4 4 0 008 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M5 12v2a7 7 0 0014 0v-2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="search-results" id="searchResults" aria-live="polite"></div>
+    <div class="search-hint">
+      <span>Present Perfect</span><span>The Old Man and the Sea</span><span>2023 Past Paper</span><span>Idioms A–Z</span>
+    </div>
+  </div>
+</div>
+
+    <div class="dash-grid">
+      <aside class="sidebar" aria-label="Teacher sidebar">
+        <div class="profile-header">
+          <div class="teacher-avatar"><img src="assets/images/teacher.png" alt="teacher"></div>
+          <div>
+            <div class="profile-name">Mr. Arslan</div>
+            <div class="muted">English Instructor</div>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h4>Quick Actions</h4>
+          <div class="teacher-actions">
+            <button class="btn">Create Assignment</button>
+            <button class="btn">Upload Resource</button>
+            <button class="btn">Send Announcement</button>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h4>Notifications</h4>
+          <div id="teacherNotifs"></div>
+        </div>
+
+        <div class="sidebar-section">
+          <h4>Legend</h4>
+          <div class="muted">Green = Present • Red = Absent • Yellow = Late</div>
+        </div>
+
+      </aside>
+
+      <main class="main">
+        <section class="panel section-panel">
+          <div class="panel-header">
+            <h3>Class Overview</h3>
+            <div class="controls">
+              <select id="classSelect"><option value="all">All Classes</option><option value="class-a">Class A</option><option value="class-b">Class B</option></select>
+              <button id="refreshBtn" class="btn-ghost">Refresh</button>
+            </div>
+          </div>
+
+          <div class="grid-2 panel-grid">
+            <div>
+              <div class="panel panel-spaced">
+                <h4>Students</h4>
+                <table class="students-table">
+                  <thead><tr><th>Name</th><th>Roll</th><th>Progress</th><th>Actions</th></tr></thead>
+                  <tbody id="studentsTbody"></tbody>
+                </table>
+              </div>
+
+              <div class="panel">
+                <h4>Assignments</h4>
+                <div id="assignmentsList"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="panel panel-spaced">
+                <h4>Attendance (this week)</h4>
+                <div class="attendance-grid" id="attendanceGrid"></div>
+              </div>
+
+              <div class="panel">
+                <h4>Leaderboard</h4>
+                <div id="leaderboard"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid-2 section-grid">
+          <div class="panel">
+            <h3>Analytics</h3>
+            <canvas id="engagementChart" height="160"></canvas>
+          </div>
+
+          <div class="panel">
+            <h3>Recent Activity</h3>
+            <div class="recent-list" id="recentActivity"></div>
+          </div>
+        </section>
+
+        <section class="split-row">
+          <div class="panel panel-expand">
+            <h3>Calendar</h3>
+            <div class="calendar calendar-top" id="teacherCalendar"></div>
+          </div>
+
+          <div class="panel side-panel">
+            <h3>Course Management</h3>
+            <div id="coursesList"></div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="assets/js/shared.js"></script>
+  <script>
+    // Mock data
+    const students = [
+      {name:'Aisha Khan',roll:'A01',progress:72},
+      {name:'Bilal Ahmed',roll:'A02',progress:88},
+      {name:'Fatima Noor',roll:'A03',progress:59},
+      {name:'Hamza Ali',roll:'A04',progress:94}
+    ];
+
+    const assignments = [
+      {id:1,title:'Tenses Homework',due:'2026-07-20',status:'Pending'},
+      {id:2,title:'Poetry Essay',due:'2026-07-18',status:'Submitted'},
+    ];
+
+    const courses = [
+      {id:'c1',title:'Intermediate Grammar',lessons:24,enrolled:120},
+      {id:'c2',title:'Poetry & Analysis',lessons:12,enrolled:84}
+    ];
+
+    const notifs = [
+      {id:1,text:'Assignment submitted by Bilal',time:'2h'},
+      {id:2,text:'New message from parent (Aisha)',time:'1d'}
+    ];
+
+    // render notifications
+    const tNotRoot = document.getElementById('teacherNotifs'); notifs.forEach(n=>{const d=document.createElement('div');d.className='muted';d.style.padding='8px';d.style.border='1px solid var(--card-border)';d.style.borderRadius='8px';d.style.marginBottom='8px';d.innerHTML=`<div style="display:flex;justify-content:space-between"><div>${n.text}</div><div class="muted">${n.time}</div></div>`;tNotRoot.appendChild(d)});
+
+    // students table
+    const tbody = document.getElementById('studentsTbody'); students.forEach(s=>{const tr=document.createElement('tr'); tr.innerHTML=`<td>${s.name}</td><td>${s.roll}</td><td><div style=\"width:120px\"><div class=\"progress-bar\" aria-hidden><i style=\"width:${s.progress}%\"></i></div></div></td><td><button class=\"btn-sm\">Profile</button> <button class=\"btn-sm\">Grade</button></td>`; tbody.appendChild(tr)});
+
+    // assignments
+    const aRoot = document.getElementById('assignmentsList'); assignments.forEach(a=>{const d=document.createElement('div');d.style.padding='8px';d.style.border='1px solid var(--card-border)';d.style.borderRadius='8px';d.style.marginBottom='8px'; d.innerHTML=`<div style=\"display:flex;justify-content:space-between\"><div><b>${a.title}</b><div class=\"muted\">Due: ${a.due}</div></div><div class=\"muted\">${a.status}</div></div>`; aRoot.appendChild(d)});
+
+    // attendance grid (7 days)
+    const attRoot = document.getElementById('attendanceGrid'); const days=['Mon','Tue','Wed','Thu','Fri','Sat','Sun']; for(let i=0;i<7;i++){const c=document.createElement('div');c.className='att-cell'; c.innerHTML=`<div style=\"font-weight:700\">${days[i]}</div><div class=\"muted\">90% present</div>`; attRoot.appendChild(c)}
+
+    // leaderboard
+    const lbRoot = document.getElementById('leaderboard'); students.sort((a,b)=>b.progress-a.progress).slice(0,3).forEach((s,idx)=>{const d=document.createElement('div');d.className='leaderboard-item';d.innerHTML=`<div><b>${s.name}</b><div class=\"muted\">Roll: ${s.roll}</div></div><div style=\"font-weight:700\">${s.progress}%</div>`; lbRoot.appendChild(d)});
+
+    // recent activity
+    const recentRoot = document.getElementById('recentActivity'); const recents=['Marked assignment for Aisha','Published new lesson: Narration','Commented on Bilal''s essay']; recents.forEach(r=>{const d=document.createElement('div');d.style.padding='8px';d.style.border='1px solid var(--card-border)';d.style.borderRadius='8px'; d.textContent=r; recentRoot.appendChild(d)});
+
+    // courses
+    const coursesRoot = document.getElementById('coursesList'); courses.forEach(c=>{const d=document.createElement('div');d.style.padding='8px';d.style.border='1px solid var(--card-border)';d.style.borderRadius='8px';d.style.marginBottom='8px'; d.innerHTML=`<div style=\"display:flex;justify-content:space-between\"><div><b>${c.title}</b><div class=\"muted\">${c.lessons} lessons â€¢ ${c.enrolled} students</div></div><div><button class=\"btn-sm\">Manage</button></div></div>`; coursesRoot.appendChild(d)});
+
+    // calendar simple (current month days grid)
+    function renderTeacherCalendar(){const root=document.getElementById('teacherCalendar'); root.innerHTML=''; const now=new Date(); const year=now.getFullYear(); const month=now.getMonth(); const first=new Date(year,month,1); const start=first.getDay(); const days=new Date(year,month+1,0).getDate(); const grid=document.createElement('div'); grid.style.display='grid'; grid.style.gridTemplateColumns='repeat(7,1fr)'; grid.style.gap='6px'; for(let i=0;i<start;i++){const e=document.createElement('div');e.style.height='44px';grid.appendChild(e);} for(let d=1; d<=days; d++){const e=document.createElement('div');e.style.height='44px';e.style.border='1px solid var(--card-border)';e.style.borderRadius='6px';e.style.display='flex';e.style.alignItems='center';e.style.justifyContent='center'; e.textContent=d; if(d===new Date().getDate()){e.style.background='linear-gradient(90deg,var(--accent),#ff8b8b)';e.style.color='white'} grid.appendChild(e);} root.appendChild(grid);} renderTeacherCalendar();
+
+    // analytics chart
+    const ctx = document.getElementById('engagementChart').getContext('2d'); const engagement = new Chart(ctx, {type:'bar', data:{labels:['Week 1','Week 2','Week 3','Week 4'], datasets:[{label:'Active students',data:[110,120,115,125],backgroundColor:'rgba(255,107,107,0.14)',borderColor:'rgba(255,107,107,1)',borderWidth:1}]}, options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true}}}});
+
+    // small interactions
+    document.getElementById('refreshBtn').addEventListener('click', ()=>{alert('Refreshed (mock)')});
+    document.querySelectorAll('.theme-toggle').forEach(b=>b.addEventListener('click', ()=>{const html=document.documentElement; html.setAttribute('data-theme', html.getAttribute('data-theme')==='dark'?'light':'dark')}));
+  </script>
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="brand">
+        <div class="brand-logo"><img src="assets/images/logo.jpg" alt="Let's Learn with Arslan logo"></div>
+        <div class="brand-text">Let's Learn with Arslan</div>
+      </a>
+      <p>A premium learning platform for intermediate English students — grammar, poetry, literature, vocabulary and exam practice in one calm place.</p>
+      <div class="foot-social">
+        <a href="#" aria-label="Facebook" class="icon-btn magnetic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h2.5l.5-3H14v-1.5c0-.3.2-.5.5-.5z" stroke="currentColor" stroke-width="1.3"/></svg></a>
+        <a href="#" aria-label="Instagram" class="icon-btn magnetic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.4"/><circle cx="16.4" cy="7.6" r=".9" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="YouTube" class="icon-btn magnetic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="3" stroke="currentColor" stroke-width="1.4"/><path d="M10 9.5l5 2.5-5 2.5z" fill="currentColor"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4>Learn</h4>
+      <a href="grammar.html">Grammar</a>
+      <a href="poetry.html">Poetry</a>
+      <a href="literature.html">Literature</a>
+      <a href="vocabulary.html">Vocabulary</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="past-papers.html">Past Papers</a>
+    </div>
+    <div>
+      <h4>Platform</h4>
+      <a href="lesson.html">Lessons</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="student-dashboard.html">Dashboard</a>
+      <a href="teacher-dashboard.html">Teacher Panel</a>
+      <a href="admin-dashboard.html">Admin</a>
+    </div>
+    <div>
+      <h4>Support</h4>
+      <a href="#">FAQ</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+      <a href="#">Help Center</a>
+    </div>
+  </div>
+  <div class="footer-bottom wrap">
+    <span>© 2026 Let's Learn with Arslan. All rights reserved.</span>
+    <span>Where English Becomes Easy.</span>
+  </div>
+</footer>
+
+</html>

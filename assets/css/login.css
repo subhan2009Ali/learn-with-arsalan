@@ -1,0 +1,345 @@
+﻿/* Page-specific styles for login.html */
+body[data-theme='dark'] .auth-card,
+body[data-theme='light'] .auth-card {
+  background: var(--card-bg);
+}
+/* 1. Define your base theme (Light) */
+:root {
+  --card-bg: #ffffff;
+  --ink: #101828;
+  --ink-dim: #667085;
+  --accent: #6c5ce7;
+  --card-border: #eaecf0;
+  --body-bg: #022853;
+}
+
+/* 2. Override for Dark Mode */
+[data-theme='dark'] {
+  --card-bg: #1a1c24;
+  --ink: #f2f4f7;
+  --ink-dim: #98a2b3;
+  --accent: #877eff;
+  --card-border: #344054;
+  --body-bg: #050a14; /* Slightly darker background */
+}
+
+/* 3. Apply variables to your elements */
+body {
+  /* Use the variable instead of the hardcoded color */
+  background-color:#022752; 
+  
+  /* Update the gradient to be more subtle or themed if you like */
+  background: linear-gradient(180deg, var(--accent), transparent 40%);
+  
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--nav-h) + 32px) 32px 32px;
+}
+
+.auth-card {
+  background: var(--card-bg);
+}
+
+/* Remove your old 'body[data-theme=dark] .auth-card' rules entirely */
+body {
+  background-color: #022853;
+  background: linear-gradient(180deg, rgba(110,95,255,0.06), transparent 40%);
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--nav-h) + 32px) 32px 32px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 920px;
+  background: var(--card-bg);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(16,24,40,0.3);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  min-height: 560px;
+}
+
+.auth-side {
+  padding: 44px 56px;
+  background: linear-gradient(180deg, rgba(108,92,231,0.06), transparent);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.auth-side .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.auth-side .brand-title {
+  font-weight: 700;
+}
+
+.auth-side h2 {
+  font-size: 28px;
+  margin: 6px 0 0;
+}
+
+.auth-illustration {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-illustration img {
+  max-width: 100%;
+  filter: drop-shadow(0 8px 30px rgba(108,92,231,0.12));
+}
+
+.auth-form {
+  padding: 36px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.auth-form h1 {
+  margin: 6px 0;
+  font-size: 22px;
+}
+
+.desc {
+  color: var(--ink-dim);
+  font-size: 14px;
+}
+
+/* Floating labels */
+.field {
+  position: relative;
+  margin-top: 10px;
+}
+
+.field input {
+  width: 100%;
+  padding: 18px 12px 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--card-border);
+  background: transparent;
+  color: var(--ink);
+  outline: none;
+  font-size: 15px;
+  transition: box-shadow .18s ease, border-color .18s ease;
+}
+
+.field label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--ink-dim);
+  transition: all .18s ease;
+  font-size: 14px;
+  padding: 0 6px;
+  background: transparent;
+}
+
+.field input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 6px 20px rgba(108,92,231,0.08);
+}
+
+.field input:focus + label,
+.field input.filled + label {
+  top: 10px;
+  transform: none;
+  font-size: 12px;
+  color: var(--accent);
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink-dim);
+  font-size: 14px;
+}
+
+.form-row,
+.action-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.form-note {
+  margin-top: 12px;
+  text-align: center;
+  color: var(--ink-dim);
+  font-size: 13px;
+}
+
+.form-note a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.45);
+  padding: 24px;
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal-card {
+  width: min(420px,100%);
+  background: var(--card-bg);
+  padding: 24px;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(4,20,28,0.25);
+}
+
+.modal-card h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+
+.modal-copy {
+  color: var(--ink-dim);
+  margin: 0 0 16px;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 14px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  background: transparent;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--accent), #5A4EE8);
+  color: rgb(2, 72, 90);
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--card-border);
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.social-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--card-border);
+  background: transparent;
+  cursor: pointer;
+}
+
+.pw-strength {
+  height: 8px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #022752, #0442b4);
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.pw-strength > i {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #f44336, #ff9800, #8bc34a);
+  transition: width .24s ease;
+}
+
+.pw-text {
+  font-size: 13px;
+  color: var(--ink-dim);
+  margin-top: 6px;
+}
+
+.forgot {
+  margin-left: auto;
+  color: var(--accent);
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  font: inherit;
+}
+
+.errors {
+  color: #ff6b6b;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+@media (max-width: 900px) {
+  .auth-card {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .auth-illustration {
+    display: none;
+  }
+
+  .auth-side {
+    order: 2;
+  }
+
+  .auth-form {
+    order: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+

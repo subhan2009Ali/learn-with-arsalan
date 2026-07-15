@@ -1,0 +1,20 @@
+﻿/* Page-specific styles for poem.html */
+
+.poem-detail .poem-meta-panel,
+.poem-detail .poem-text-panel,
+.poem-detail .poem-annotations,
+.poem-detail .analysis-grid,
+.poem-detail .poem-devices,
+.poem-detail .poem-quiz-section,
+.poem-detail .poem-practice,
+.poem-detail .related-poems{ margin-bottom:44px; }
+
+.poem-text{ padding:24px; border-radius:28px; background:var(--glass); border:1px solid var(--glass-brd); }
+
+.poem-line{ margin:0; line-height:1.8; }
+
+.analysis-grid{ display:grid; grid-template-columns:1.1fr .9fr; gap:24px; }
+
+@media(max-width:900px){ .analysis-grid{grid-template-columns:1fr;} }
+
+.related-poems .work-grid{ margin-top:20px; }

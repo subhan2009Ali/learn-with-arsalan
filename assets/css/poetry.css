@@ -1,0 +1,59 @@
+﻿/* Page-specific styles for poetry.html */
+
+.poetry-hero{ position:relative; padding:120px 0 70px; overflow:hidden; }
+
+.poetry-hero-grid{ display:grid; grid-template-columns:1.1fr .9fr; gap:48px; align-items:center; }
+
+@media(max-width:980px){ .poetry-hero-grid{grid-template-columns:1fr;} }
+
+.poetry-hero h1{ font-size:clamp(38px,5vw,58px); margin-top:18px; }
+
+.poetry-hero .hero-copy p{ max-width:640px; margin-top:18px; color:var(--ink-dim); }
+
+.poetry-section{ padding:90px 0; }
+
+.poem-grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
+
+@media(max-width:1100px){ .poem-grid{grid-template-columns:repeat(2,minmax(0,1fr));} }
+
+@media(max-width:760px){ .poem-grid{grid-template-columns:1fr;} }
+
+.poem-card{ display:flex; flex-direction:column; gap:18px; padding:24px; border-radius:28px; background:var(--glass); border:1px solid var(--glass-brd); box-shadow:0 25px 60px -30px var(--shadow); transition:transform .3s ease, box-shadow .3s ease; }
+
+.poem-card:hover{ transform:translateY(-4px); box-shadow:0 28px 70px -32px var(--shadow); }
+
+.poem-card-top{ display:flex; align-items:flex-start; justify-content:space-between; gap:16px; }
+
+.poem-card-top h3{ margin:0; font-size:20px; }
+
+.poem-card p{ color:var(--ink-dim); line-height:1.65; }
+
+.poem-card-meta{ display:flex; flex-wrap:wrap; gap:10px; color:var(--ink-dim); font-size:13px; }
+
+.poem-card-cta{ margin-top:auto; }
+
+.author-grid{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px; }
+
+@media(max-width:980px){ .author-grid{grid-template-columns:repeat(2,minmax(0,1fr));} }
+
+@media(max-width:640px){ .author-grid{grid-template-columns:1fr;} }
+
+.author-card{ padding:26px; border-radius:28px; background:var(--glass); border:1px solid var(--glass-brd); box-shadow:0 25px 65px -34px var(--shadow); }
+
+.author-card h3{ margin-bottom:10px; }
+
+.recent-column{ padding:28px; border-radius:28px; background:var(--glass); border:1px solid var(--glass-brd); }
+
+.recent-column h3{ margin-bottom:16px; }
+
+.recent-column p{ color:var(--ink-dim); }
+
+.recent-column .page-link{ display:block; padding:14px 16px; border-radius:18px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.06); margin-bottom:10px; color:inherit; }
+
+.poem-header .hero-copy{ max-width:700px; }
+
+.poem-actions{ display:flex; gap:14px; flex-wrap:wrap; margin-top:24px; }
+
+.related-poems .poem-grid{ margin-top:20px; }
+
+@media(max-width:640px){ .author-grid{grid-template-columns:1fr;} }
